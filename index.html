@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>랜덤 이미지 뽑기</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>랜덤 이미지 뽑기</h1>
+  <button onclick="showRandomImage()">이미지 뽑기</button>
+  <div id="image-container"></div>
+
+  <script>
+    const images = [
+      "images/pic1.png",
+      "images/pic2.jpg",
+      "images/pic3.png",
+      // 여기에 원하는 만큼 추가!
+    ];
+
+    function showRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+
+      document.getElementById("image-container").innerHTML =
+        `<img src="${selectedImage}" alt="랜덤 이미지">`;
+    }
+
+    // QR로 들어오면 자동으로 표시하고 싶을 때:
+    // window.onload = showRandomImage;
+  </script>
+
+</body>
+</html>
